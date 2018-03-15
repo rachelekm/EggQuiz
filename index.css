@@ -76,6 +76,12 @@ h2 {
   margin-top: 0;
 }
 
+.newQuestionForm fieldset {
+	padding: none;
+	margin: none;
+	border: none;
+}
+
 .startPage {
   background-color: white;
 	text-align: center;

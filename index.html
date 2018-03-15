@@ -28,18 +28,18 @@
 			<button type="button" role = "button" class="start">Let's start!</button>
 		</section>
 		<!--once .start is submitted, the startPage is hidden, the scorecard is appended to the header and reset to 0. The first question as a form will display within questions section-->
-		<section class="answers">
+		<section class="answers" aria-live="assertive">
 			<!--block that displays whether right or wrong next to questions block, and then on top of questions when screen size shrinks. Will include below when displayed:
 			<button type="button" class="continuteButton">Continute</button>-->
 		</section>
 		
-		<section class="questions">
+		<section class="questions" hidden>
 		  <!--h2 question value is displayed with four radio buttons in form beneath. must select one option. below is a button to submit answer-->
 		  <!--at submit, result block is displayed above (to side if larger screen) with conditional and right answer and a continue button-->
 		  <!--At the 10th question, the text in submit button changes to 'get results' and button takes user to final page-->
 		</section>
 		
-		<section class="finalPage">
+		<section class="finalPage" hidden>
 		  <!--will display current updated score and conditional result text with bottom button to retake the quiz...which leads to resetting score and start page reload-->
 		</section>
 		

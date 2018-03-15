@@ -100,8 +100,8 @@ function shuffleQuestionDisplay(){
 function displayQuestion() {
 	let i = shuffleQuestionDisplay();
 	let arrayObj = QUESTIONS[i];
-	$('.questions').html(
-		"<div class='questionOutput'><h2 class='headerQuestion'>"+arrayObj.question+"</h2><form class=newQuestionForm action='/' method='get'><label for='option'><input type='radio' name='option' value='option1' required/>"+arrayObj.options[0]+"</label></br><label for='option'><input type='radio' name='option' value='option2'/>"+arrayObj.options[1]+"</label></br><label for='option'><input type='radio' name='option' value='option3'/>"+arrayObj.options[2]+"</label></br><label for='option'><input type='radio' name='option' value='option4'/>"+arrayObj.options[3]+"</label></br><button type='submit' class='submit'>Submit</button></form></div>"
+	$('.questions').prop('hidden', false).html(
+		"<div class='questionOutput'><h2 class='headerQuestion'>"+arrayObj.question+"</h2><form class=newQuestionForm action='/' method='get'><fieldset role='group'><label for='option'><input type='radio' name='option' value='option1' aria-label='option one' required/>"+arrayObj.options[0]+"</label></br><label for='option'><input type='radio' name='option' value='option2' aria-label='option two'/>"+arrayObj.options[1]+"</label></br><label for='option'><input type='radio' name='option' value='option3' aria-label='option three'/>"+arrayObj.options[2]+"</label></br><label for='option'><input type='radio' name='option' value='option4' aria-label='option four'/>"+arrayObj.options[3]+"</label></fieldset></br><button type='submit' class='submit'>Submit</button></form></div>"
 		);
 	window.scrollTo(0,document.body.scrollHeight);
 }
@@ -166,7 +166,7 @@ function compareAnswers(rightAns, userAns){
 
 function displayResults(index, answer){
   $('html,body').scrollTop(0);
-  $('.questions').contents().hide();
+  $('.questions').prop('hidden', true).contents().hide();
 	let rightAnswer = QUESTIONS[index].answer;
 	if(compareAnswers(rightAnswer, answer)){
 		correctAnswerDisplay(rightAnswer);
@@ -213,7 +213,7 @@ function displayFinalPage(){
 	$('.questions').contents().hide();
 	$('.answers').contents().hide();
 	$('.logo').addClass('logoFinalPage');
-	$('.finalPage').html("<div class='finalResultStyle'>"+finalResults()+"</br><button type='button' class='restart'>Restart</button></div>");
+	$('.finalPage').prop('hidden', false).html("<div class='finalResultStyle'>"+finalResults()+"</br><button type='button' class='restart'>Restart</button></div>");
 }
 
 function finalResults() {
