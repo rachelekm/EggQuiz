@@ -101,7 +101,7 @@ function displayQuestion() {
 	let i = shuffleQuestionDisplay();
 	let arrayObj = QUESTIONS[i];
 	$('.questions').html(
-		"<div class='questionOutput'><h2 class='headerQuestion'>"+arrayObj.question+"</h2><form class=newQuestionForm action='/' method='get'><input type='radio' name='option' value='option1' required/><label for='option'>"+arrayObj.options[0]+"</label></br><input type='radio' name='option' value='option2'/><label for='option'>"+arrayObj.options[1]+"</label></br><input type='radio' name='option' value='option3'/><label for='option'>"+arrayObj.options[2]+"</label></br><input type='radio' name='option' value='option4'/><label for='option'>"+arrayObj.options[3]+"</label></br><button type='submit' class='submit'>Submit</button></form></div>"
+		"<div class='questionOutput'><h2 class='headerQuestion'>"+arrayObj.question+"</h2><form class=newQuestionForm action='/' method='get'><label for='option'><input type='radio' name='option' value='option1' required/>"+arrayObj.options[0]+"</label></br><label for='option'><input type='radio' name='option' value='option2'/>"+arrayObj.options[1]+"</label></br><label for='option'><input type='radio' name='option' value='option3'/>"+arrayObj.options[2]+"</label></br><label for='option'><input type='radio' name='option' value='option4'/>"+arrayObj.options[3]+"</label></br><button type='submit' class='submit'>Submit</button></form></div>"
 		);
 	window.scrollTo(0,document.body.scrollHeight);
 }
